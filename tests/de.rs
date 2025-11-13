@@ -4,12 +4,12 @@ extern crate serde_derive;
 extern crate redis;
 extern crate serde;
 extern crate serde_bytes;
-extern crate serde_redis;
+extern crate redis_serde;
 
 use std::collections::HashMap;
 
 use serde::Deserialize;
-use serde_redis::Deserializer;
+use redis_serde::Deserializer;
 
 use redis::Value;
 
