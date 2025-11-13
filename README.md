@@ -1,9 +1,6 @@
 serde-redis
 ===========
 
-[![Build Status](https://travis-ci.org/OneSignal/serde-redis.svg?branch=master)](https://travis-ci.org/OneSignal/serde-redis)
-[![Documentation](https://docs.rs/serde-redis/badge.svg)](https://docs.rs/crate/serde-redis/)
-[![Crates.io Version](https://img.shields.io/crates/v/serde-redis.svg)](https://crates.io/crates/serde-redis/)
 
 
 [serde][] serialization and deserialization of [redis-rs][] values
@@ -11,14 +8,20 @@ serde-redis
 [serde]: https://github.com/serde-rs/serde
 [redis-rs]: https://github.com/mitsuhiko/redis-rs
 
+## About
+
+This crate is a fork of [OneSignal/serde-redis](https://github.com/OneSignal/serde-redis) with **full serialization support** added.
+
 ## Status
 
-- Deserialization: Everything _should_ work.
-- Serialization: Everything _should_ work.
+- ✅ Deserialization: Fully implemented and working
+- ✅ Serialization: Fully implemented and working
 
 ## Summary
 
-This crate gives you automatic deserialization of values returned from redis-rs.
+This crate provides automatic serialization and deserialization of values for use with redis-rs.
+
+### Deserialization
 
 ```rust
 use serde_redis::RedisDeserialize;
@@ -33,10 +36,33 @@ let s: Simple = redis.hgetall("simple_hash")?
                      .deserialize()?;
 ```
 
-## Future work
+### Serialization
 
-- Work at the redis protocol level instead of `redis::Value` type.
-- Merge into redis-rs?
+```rust
+use serde_redis::Serializer;
+use serde::Serialize;
+
+#[derive(Debug, Serialize, PartialEq)]
+struct Simple {
+    a: String,
+    b: String,
+}
+
+let data = Simple {
+    a: "value1".to_string(),
+    b: "value2".to_string(),
+};
+
+let redis_value = data.serialize(Serializer)?;
+// Use redis_value with redis-rs commands
+```
+
+## Features
+
+- **Deserialization**: Convert `redis::Value` types into Rust types using serde
+- **Serialization**: Convert Rust types into `redis::Value` types using serde
+- Support for all common Rust types (primitives, structs, enums, collections, etc.)
+- Compatible with redis-rs 0.32+
 
 ## License
 
