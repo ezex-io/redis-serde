@@ -1,8 +1,8 @@
 extern crate serde_derive;
 
 use redis::Value;
-use serde::{Deserialize, Serialize};
 use redis_serde::{Deserializer, Serializer};
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
 #[test]

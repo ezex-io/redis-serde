@@ -1,7 +1,7 @@
 extern crate serde_derive;
 
-use serde::{Deserialize, Serialize};
 use redis_serde::{Deserializer, Serializer};
+use serde::{Deserialize, Serialize};
 
 #[test]
 fn test_serde_struct() {
