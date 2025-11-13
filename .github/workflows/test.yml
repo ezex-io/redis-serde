@@ -22,8 +22,6 @@ jobs:
           toolchain: stable
 
       - uses: Swatinem/rust-cache@v2
-        with:
-          key: ${{ runner.os }}-rust-${{ hashFiles('Cargo.lock') }}
 
       - name: Run Tests
         run: cargo test
