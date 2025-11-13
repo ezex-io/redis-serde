@@ -1,7 +1,4 @@
-serde-redis
-===========
-
-
+# serde_redis
 
 [serde][] serialization and deserialization of [redis-rs][] values
 

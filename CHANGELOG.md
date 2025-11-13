@@ -1,6 +1,6 @@
 # Changes
 
-## 0.13.0
+## 0.15.0
 
 - **Added full serialization support** - This fork extends the original OneSignal/serde-redis crate with complete serialization functionality
 - Update to use redis-rs 0.32
