@@ -1,4 +1,4 @@
-name: Testing (Rust)
+name: Testing
 permissions:
   contents: read
 

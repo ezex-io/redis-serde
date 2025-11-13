@@ -1,7 +1,7 @@
 [package]
 name = "redis-serde"
 version = "0.16.0"
-authors = ["ezex-io"]
+authors = ["ezeX development team"]
 description = "Serde serialization and deserialization for redis-rs."
 license = "MIT OR Apache-2.0"
 readme = "README.md"
