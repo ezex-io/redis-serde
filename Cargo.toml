@@ -1,19 +1,18 @@
 [package]
 name = "serde_redis"
-version = "0.3.0"
-authors = [
-    "Joe Wilm <joe@jwilm.com>",
-    "b00f (@b00f)"
-]
-description = "Serde deserialization for redis-rs"
+version = "0.13.0"
+authors = ["ezex-io"]
+description = "Serde serialization and deserialization for redis-rs."
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/ezex-io/serde-redis"
 documentation = "https://docs.rs/serde-redis"
 edition = "2024"
+keywords = ["redis", "serde", "serialization", "deserialization"]
+categories = ["encoding", "network-programming"]
 
 [dependencies]
-redis = "0.31"
+redis = "0.32"
 serde = "1.0"
 
 [dev-dependencies]
