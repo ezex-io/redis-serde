@@ -1,7 +1,4 @@
-serde-redis
-===========
-
-
+# redis-serde
 
 [serde][] serialization and deserialization of [redis-rs][] values
 
@@ -24,7 +21,7 @@ This crate provides automatic serialization and deserialization of values for us
 ### Deserialization
 
 ```rust
-use serde_redis::RedisDeserialize;
+use redis_serde::RedisDeserialize;
 
 #[derive(Debug, Deserialize, PartialEq)]
 struct Simple {
@@ -39,7 +36,7 @@ let s: Simple = redis.hgetall("simple_hash")?
 ### Serialization
 
 ```rust
-use serde_redis::Serializer;
+use redis_serde::Serializer;
 use serde::Serialize;
 
 #[derive(Debug, Serialize, PartialEq)]
